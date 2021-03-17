@@ -1,19 +1,24 @@
 def bubble_sort(arr)
-  for i in 0..arr.length-1  do       
-    for j in 0..arr.length-2 do     
-      arr[j], arr[j + 1] = arr[j + 1], arr[j] if(arr[j] > arr[j + 1])
+  arr.each_index do |i|    
+    arr.each_index do |j|   
+      arr[i], arr[j] = arr[j], arr[i] if(arr[i] < arr[j])
      end
   end
   return arr
 end
 
 def bubble_sort_by(arr)
-  for i in 0..arr.length-1  do
-    for j in 0..arr.length-2 do
-      result = yield(arr[j],arr[j + 1])
-      arr[j], arr[j + 1] = arr[j + 1], arr[j] if result > 0
+  arr.each_index do |i|
+    arr.each_index do |j|
+      result = yield(arr[i],arr[j])
+      arr[i], arr[j] = arr[j], arr[i] if result < 0
     end
   end
   return arr
 end
 
+test_arr = [1,2,3,4,7,9,1,3,2,6]
+second_arr = ["hi", "hello", "hey"]
+
+p bubble_sort(test_arr)
+p bubble_sort_by(second_arr){|left,right|left.length - right.length}

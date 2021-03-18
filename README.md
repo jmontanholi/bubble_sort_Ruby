@@ -14,10 +14,13 @@
 ## Getting Started
   * Prerequisites 
     * Github account
+    * Terminal / Github Desktop
     * Code editor
     * Ruby
   * How to set locally
-    * Clone the repository into your local machine
+    * Log into your github account
+    * Open your terminal or github desktop
+    * Clone the repository into your local machine with HTTPS or SSH key
     * Open the project with your code editor
     * Try it out!
 
